@@ -1,4 +1,4 @@
-import { Produto } from "./types";
+import { Cliente, Produto } from "./types";
 
 //Banco de dados-------------------------------------------------------
 export const produtos: Produto[] = [
@@ -37,4 +37,10 @@ export const produtos: Produto[] = [
     preco: 199.0,
     estoque: 30,
   },
+];
+
+export const clientes: Cliente[] = [
+  { id: 1, nome: "Carlos", email: "carlinhos2324@gmail.com" },
+  { id: 2, nome: "Victor", email: "vitinho2526@gmail.com" },
+  { id: 3, nome: "Bruno", email: "bruninho2728@gmail.com" },
 ];
