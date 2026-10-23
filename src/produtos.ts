@@ -1,5 +1,5 @@
 import { produtos } from "./banco-de-dados";
-import { Produto } from "./types";
+import { Categoria, Produto } from "./types";
 import { formatarMoeda } from "./utils";
 
 export function listarProdutos(): void {
@@ -37,7 +37,7 @@ export function atualizarProduto(
     (dadosAtualizados.estoque !== undefined && dadosAtualizados.estoque < 0)
   ) {
     console.log("Erro: Preço ou estoque não podem ter valores negativos.");
-    return false
+    return false;
   }
 
   if (dadosAtualizados.nome !== undefined) {
@@ -73,27 +73,42 @@ export function cadastrarProduto(produto: Produto): boolean {
       return false;
     }
 
-    produto.nome = nomeLimpo; 
+    produto.nome = nomeLimpo;
   }
-
 
   produtos.push(produto);
   console.log("Seu produto foi cadastrado");
   return true;
 }
 
-export function deletarProduto(id:number): boolean|undefined {
+export function deletarProduto(id: number): boolean | undefined {
   const produto = buscarProdutoPorId(id);
 
- if (produto === undefined) {
+  if (produto === undefined) {
     console.error(`Erro: Produto com ID ${id} não foi encontrado.`);
     return false;
   }
   const index = produtos.indexOf(produto);
-  produtos.splice(index,1);
-  console.log(`Produto "${produto.nome}"(ID ${id} deletado com sucesso)`)
+  produtos.splice(index, 1);
+  console.log(`Produto "${produto.nome}"(ID ${id} deletado com sucesso)`);
 }
 
+
+export function filtrarCategoria(categoria: Categoria): void {
+  const produtosFiltrados = produtos.filter(
+    produto => produto.categoria === categoria
+  );
+
+  if (produtosFiltrados.length === 0) {
+    console.log(`Nenhum produto encontrado na categoria "${categoria}".`);
+    return;
+  }
+
+  console.log(`--- Produtos da categoria: ${categoria} ---`);
+  for (const produto of produtosFiltrados) {
+    console.log(`${produto.id} | ${produto.nome} | R$ ${produto.preco} | Estoque: ${produto.estoque}`);
+  }
+}
 
 const novoProduto: Produto = {
   id: 6,
@@ -103,6 +118,4 @@ const novoProduto: Produto = {
   estoque: 200,
 };
 cadastrarProduto(novoProduto);
-listarProdutos();
-deletarProduto(6);
-listarProdutos();
+filtrarCategoria("Alimentos");
