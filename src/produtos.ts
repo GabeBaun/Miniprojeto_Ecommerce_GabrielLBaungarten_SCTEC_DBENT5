@@ -110,12 +110,3 @@ export function filtrarCategoria(categoria: Categoria): void {
   }
 }
 
-const novoProduto: Produto = {
-  id: 6,
-  nome: "feijao",
-  categoria: "Alimentos",
-  preco: 3,
-  estoque: 200,
-};
-cadastrarProduto(novoProduto);
-filtrarCategoria("Alimentos");

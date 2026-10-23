@@ -4,7 +4,6 @@ export type Categoria =
   | "Vestuario"
   | "Cama, mesa e banho";
 
-
 export type Produto = {
   id: number;
   nome: string;
@@ -17,4 +16,9 @@ export type Cliente = {
   id: number;
   nome: string;
   email: string;
+};
+
+export type itemCarrinho = {
+  produto: Produto;
+  quantidade: number;
 };
