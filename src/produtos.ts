@@ -1,5 +1,5 @@
 import { produtos } from "./banco-de-dados";
-import { Categoria, Produto } from "./types";
+import { Produto } from "./types";
 import { formatarMoeda } from "./utils";
 
 export function listarProdutos(): void {
@@ -37,6 +37,7 @@ export function atualizarProduto(
     (dadosAtualizados.estoque !== undefined && dadosAtualizados.estoque < 0)
   ) {
     console.log("Erro: Preço ou estoque não podem ter valores negativos.");
+    return false
   }
 
   if (dadosAtualizados.nome !== undefined) {
@@ -50,37 +51,58 @@ export function atualizarProduto(
 export function cadastrarProduto(produto: Produto): boolean {
   const existente = buscarProdutoPorId(produto.id);
 
-  if (existente != undefined) {
-    console.log("Esse produto ja existe");
+  if (existente !== undefined) {
+    console.log("Esse produto já existe");
     return false;
   }
+
   if (
     (produto.id !== undefined && produto.id < 0) ||
     (produto.preco !== undefined && produto.preco < 0) ||
     (produto.estoque !== undefined && produto.estoque < 0)
   ) {
     console.log("Erro: Id, preço ou estoque não podem ter valores negativos.");
-    return false
+    return false;
   }
 
   if (produto.nome !== undefined) {
     const nomeLimpo = produto.nome.trim();
-    return false
+
+    if (nomeLimpo.length < 2) {
+      console.log("Erro: O nome do produto deve ter pelo menos 2 caracteres.");
+      return false;
+    }
+
+    produto.nome = nomeLimpo; 
   }
+
 
   produtos.push(produto);
   console.log("Seu produto foi cadastrado");
   return true;
 }
 
-listarProdutos();
+export function deletarProduto(id:number): boolean|undefined {
+  const produto = buscarProdutoPorId(id);
+
+ if (produto === undefined) {
+    console.error(`Erro: Produto com ID ${id} não foi encontrado.`);
+    return false;
+  }
+  const index = produtos.indexOf(produto);
+  produtos.splice(index,1);
+  console.log(`Produto "${produto.nome}"(ID ${id} deletado com sucesso)`)
+}
+
 
 const novoProduto: Produto = {
   id: 6,
-  nome: "  ",
+  nome: "feijao",
   categoria: "Alimentos",
-  preco: -3,
+  preco: 3,
   estoque: 200,
 };
-
-
+cadastrarProduto(novoProduto);
+listarProdutos();
+deletarProduto(6);
+listarProdutos();
