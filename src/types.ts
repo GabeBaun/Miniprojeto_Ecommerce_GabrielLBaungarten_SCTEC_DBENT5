@@ -1,8 +1,9 @@
 export type Categoria =
-  | "eletronicos"
-  | "alimentos"
-  | "vestuario"
-  | "cama,mesa e banho";
+  | "Eletronicos"
+  | "Alimentos"
+  | "Vestuario"
+  | "Cama, mesa e banho";
+
 
 export type Produto = {
   id: number;

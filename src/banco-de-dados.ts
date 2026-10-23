@@ -1,39 +1,39 @@
-import { Cliente, Produto } from "./types";
+import { Cliente, Produto, } from "./types";
 
 //Banco de dados-------------------------------------------------------
 export const produtos: Produto[] = [
   {
     id: 1,
     nome: "Smartphone Galaxy S23",
-    categoria: "eletronicos",
+    categoria: "Eletronicos",
     preco: 3499.9,
     estoque: 15,
   },
   {
     id: 2,
     nome: "Arroz Integral 1kg",
-    categoria: "alimentos",
+    categoria: "Alimentos",
     preco: 7.5,
     estoque: 120,
   },
   {
     id: 3,
     nome: "Camiseta Algodão Básica",
-    categoria: "vestuario",
+    categoria: "Vestuario",
     preco: 49.9,
     estoque: 45,
   },
   {
     id: 4,
     nome: "Jogo de Lençol Casal 100% Algodão",
-    categoria: "cama,mesa e banho",
+    categoria: "Cama, mesa e banho",
     preco: 189.9,
     estoque: 8,
   },
   {
     id: 5,
     nome: "Fone de Ouvido Bluetooth sem Fio",
-    categoria: "eletronicos",
+    categoria: "Eletronicos",
     preco: 199.0,
     estoque: 30,
   },
