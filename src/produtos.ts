@@ -17,7 +17,7 @@ export function buscarProdutoPorId(id: number): Produto | undefined {
   return produtos.find((produto) => produto.id == id);
 }
 
-export function buscarProdutoNome(nome: string): Produto | undefined {
+export function buscarProdutoPorNome(nome: string): Produto | undefined {
   return produtos.find((produto) => produto.nome == nome);
 }
 
