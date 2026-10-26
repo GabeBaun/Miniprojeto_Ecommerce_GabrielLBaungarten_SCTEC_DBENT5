@@ -1,7 +1,7 @@
 import { buscarProdutoPorId } from "./produtos";
-import { itemCarrinho } from "./types";
+import { ItemCarrinho } from "./types";
 
-export const carrinho: itemCarrinho[] = [];
+export const carrinho: ItemCarrinho[] = [];
 
 export function adicionarAoCarrinho(id: number, quantidade: number): boolean {
   if (quantidade <= 0) {
