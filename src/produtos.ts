@@ -45,14 +45,14 @@ export function atualizarProduto(
   }
 
   Object.assign(produto, dadosAtualizados);
-  console.log("Produto atualizado com successo!");
+  console.log(`Seu produto: ${produto.nome} foi atualizado com sucesso.`);
   return true;
 }
 export function cadastrarProduto(produto: Produto): boolean {
   const existente = buscarProdutoPorId(produto.id);
 
   if (existente !== undefined) {
-    console.log("Esse produto já existe");
+    console.log("Erro: esse produto já existe!");
     return false;
   }
 
@@ -61,7 +61,7 @@ export function cadastrarProduto(produto: Produto): boolean {
     (produto.preco !== undefined && produto.preco < 0) ||
     (produto.estoque !== undefined && produto.estoque < 0)
   ) {
-    console.log("Erro: Id, preço ou estoque não podem ter valores negativos.");
+    console.log("Erro: Id, preço ou estoque não podem conter valores negativos.");
     return false;
   }
 
@@ -77,7 +77,7 @@ export function cadastrarProduto(produto: Produto): boolean {
   }
 
   produtos.push(produto);
-  console.log("Seu produto foi cadastrado");
+  console.log(`Seu produto: ${produto.nome} foi cadastrado com sucesso.`);
   return true;
 }
 
@@ -90,7 +90,7 @@ export function deletarProduto(id: number): boolean | undefined {
   }
   const index = produtos.indexOf(produto);
   produtos.splice(index, 1);
-  console.log(`Produto "${produto.nome}"(ID ${id} deletado com sucesso)`);
+  console.log(`Seu produto: ${produto.nome} foi deletado com sucesso.`);
 }
 
 

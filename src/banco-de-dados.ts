@@ -40,7 +40,7 @@ export const produtos: Produto[] = [
 ];
 
 export const clientes: Cliente[] = [
-  { id: 1, nome: "Carlos", email: "carlinhos2324@gmail.com" },
-  { id: 2, nome: "Victor", email: "vitinho2526@gmail.com" },
-  { id: 3, nome: "Bruno", email: "bruninho2728@gmail.com" },
+  { id: 1, nome: "Carlos da Costa", email: "carlinhos2324@gmail.com" },
+  { id: 2, nome: "Victor Souza", email: "vitinho2526@gmail.com" },
+  { id: 3, nome: "Bruno Henrique", email: "bruninho2728@gmail.com" },
 ];

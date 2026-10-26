@@ -52,9 +52,7 @@ export function cadastrarCliente(cliente: Cliente): boolean {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regexEmail.test(emailLimpo)) {
-      console.log(
-        "Erro: O e-mail informado é inválido. Digite um formato correto (ex: cliente@email.com).",
-      );
+      console.log("Erro: Formato do e-mail inválido.");
       return false;
     }
     if (buscarClientePorEmail(emailLimpo) !== undefined) {
@@ -103,7 +101,7 @@ export function atualizarCliente(
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regexEmail.test(emailLimpo)) {
-      console.log("Erro: O e-mail informado é inválido.");
+      console.log("Erro: Formato do e-mail inválido.");
       return false;
     }
     if (buscarClientePorEmail(emailLimpo) !== undefined) {
