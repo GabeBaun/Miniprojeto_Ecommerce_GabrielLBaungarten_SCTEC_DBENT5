@@ -8,23 +8,23 @@
 ---
 
 ## 🎯 Objetivo da Aplicação
-O objetivo desta aplicação é fornecer um sistema em Node.js e TypeScript para gerenciamento de um e-commerce em ambiente de terminal/console[cite: 1]. O sistema simula um fluxo de e-commerce permitindo o cadastro de clientes e produtos, controle de estoque, gerenciamento de carrinho de compras e finalização de pedidos[cite: 1].
+O objetivo desta aplicação é fornecer um sistema em Node.js e TypeScript para gerenciamento de um e-commerce em ambiente de terminal/console. O sistema simula um fluxo de e-commerce permitindo o cadastro de clientes e produtos, controle de estoque, gerenciamento de carrinho de compras e finalização de pedidos.
 
 ---
 
 ## ✨ Funcionalidades Implementadas
-- [x] **Gerenciamento de Clientes:** Cadastro e listagem de clientes[cite: 1].
-- [x] **Gerenciamento de Produtos:** Cadastro, listagem e atualização de estoque de produtos[cite: 1].
-- [x] **Gerenciamento do Carrinho:** Adição, remoção, alteração de quantidade e visualização de itens no carrinho de compras[cite: 1].
-- [x] **Processamento de Pedidos:** Finalização de compras, cálculo de total do pedido e atualização automática de estoque[cite: 1].
-- [x] **Simulação de Banco de Dados:** Persistência dos dados em memória durante a execução do programa[cite: 1].
+- [x] **Gerenciamento de Clientes:** Cadastro e listagem de clientes.
+- [x] **Gerenciamento de Produtos:** Cadastro, listagem e atualização de estoque de produtos.
+- [x] **Gerenciamento do Carrinho:** Adição, remoção, alteração de quantidade e visualização de itens no carrinho de compras.
+- [x] **Processamento de Pedidos:** Finalização de compras, cálculo de total do pedido e atualização automática de estoque.
+- [x] **Simulação de Banco de Dados:** Persistência dos dados em memória durante a execução do programa.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-- **Linguagem:** TypeScript / JavaScript (Node.js)[cite: 1]
-- **Compilador:** TypeScript Compiler (`tsc`)[cite: 1]
-- **Módulos & Configurações:** CommonJS / `tsconfig.json`[cite: 1]
+- **Linguagem:** TypeScript / JavaScript (Node.js)
+- **Compilador:** TypeScript Compiler (`tsc`)
+- **Módulos & Configurações:** CommonJS / `tsconfig.json`
 
 ---
 
